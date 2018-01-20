@@ -94,132 +94,18 @@
                 android:background="#ffffff"
                 android:paddingBottom="10dp"
                 android:paddingEnd="0dp"
-                android:paddingLeft="25dp"
+                android:paddingLeft="50dp"
                 android:paddingRight="0dp"
-                android:paddingStart="25dp"
+                android:paddingStart="50dp"
                 android:paddingTop="25dp"
                 android:text="Details"
                 android:textColor="#000000"
-                android:textSize="18sp" />
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:background="#ffffff"
-                android:orientation="horizontal"
-                android:weightSum="6">
-
-
-                <TextView
-                    android:id="@+id/maxTempHeading"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_weight="2"
-                    android:paddingBottom="0dp"
-                    android:paddingLeft="15dp"
-                    android:paddingStart="15dp"
-                    android:paddingTop="0dp"
-                    android:text="Max Temp: "
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/maxTemp"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:paddingBottom="0dp"
-                    android:paddingTop="0dp"
-                    android:text="000 F"
-                    android:textColor="#000000"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/minTempHeading"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_weight="1.8"
-                    android:paddingBottom="0dp"
-                    android:paddingLeft="5dp"
-                    android:paddingStart="5dp"
-                    android:paddingTop="0dp"
-                    android:text="Min Temp: "
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/minTemp"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:paddingBottom="0dp"
-                    android:paddingTop="0dp"
-                    android:text="000 F"
-                    android:textColor="#000000"
-                    android:textSize="18sp" />
-
-
-            </LinearLayout>
+                android:textSize="22sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
-                android:background="#ffffff"
-                android:orientation="horizontal"
-                android:weightSum="3">
-
-                <TextView
-                    android:id="@+id/humidityHeading"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentLeft="false"
-                    android:layout_alignParentStart="false"
-                    android:layout_alignParentTop="false"
-                    android:layout_marginBottom="5dp"
-                    android:layout_weight="1.8"
-                    android:gravity="center"
-                    android:paddingLeft="15dp"
-                    android:text="Relative Hiumidity"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/humidity"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentEnd="false"
-                    android:layout_alignParentRight="false"
-                    android:layout_marginBottom="5dp"
-                    android:layout_weight="1.2"
-                    android:gravity="center_vertical|center"
-                    android:paddingRight="30dp"
-                    android:text="100 %"
-                    android:textColor="#000000"
-                    android:textSize="18sp" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="0dp"
                 android:layout_weight="1"
                 android:background="#e0e0e0"
                 android:orientation="horizontal"
@@ -247,9 +133,10 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/windHeading"
                         android:layout_marginBottom="5dp"
-                        android:layout_marginStart="45dp"
-                        android:paddingLeft="15dp"
-                        android:text="00 km/hr"
+                        android:layout_marginLeft="22dp"
+                        android:layout_marginStart="22dp"
+                        android:paddingLeft="5dp"
+                        android:text="12.8 km/hr"
                         android:textColor="#000000"
                         android:textSize="18sp" />
 
@@ -259,11 +146,11 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/windHeading"
                         android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
                         android:layout_toEndOf="@id/windSpeed"
                         android:layout_toRightOf="@id/windSpeed"
-                        android:paddingLeft="10dp"
-                        android:paddingStart="10dp"
-                        android:text="NW"
+                        android:text="NW-NW"
                         android:textColor="#000000"
                         android:textSize="18sp" />
 
@@ -300,6 +187,124 @@
                 </RelativeLayout>
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:orientation="horizontal"
+                android:weightSum="6">
+
+
+                <TextView
+                    android:id="@+id/visibilityHeading"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1.5"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="0dp"
+                    android:paddingLeft="10dp"
+                    android:paddingStart="10dp"
+                    android:paddingTop="0dp"
+                    android:text="Visibility"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/visibility"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical|center"
+                    android:paddingBottom="0dp"
+                    android:paddingTop="0dp"
+                    android:text="00 km"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/uvIndexHeading"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1.5"
+                    android:gravity="center_vertical|center"
+                    android:paddingBottom="0dp"
+                    android:paddingLeft="5dp"
+                    android:paddingStart="5dp"
+                    android:paddingTop="0dp"
+                    android:text="UV Index"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/uvIndex"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|center"
+                    android:paddingBottom="0dp"
+                    android:paddingTop="0dp"
+                    android:text="00"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <TextView
+                    android:id="@+id/humidityHeading"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1.8"
+                    android:gravity="center"
+                    android:paddingLeft="15dp"
+                    android:text="Relative Hiumidity"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/humidity"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1.2"
+                    android:gravity="center_vertical|center"
+                    android:paddingRight="30dp"
+                    android:text="100 %"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+
+            </LinearLayout>
+
+
+
 
         </LinearLayout>
 
@@ -319,60 +324,169 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:background="#e0e0e0"
+                android:orientation="horizontal"
                 android:paddingBottom="4dp" >
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginBottom="2dp"
+                    android:layout_weight="0.75"
                     android:background="#ffffff"
-                    android:text="Day2" >
+                    android:orientation="vertical"
+                    android:paddingLeft="20dp">
+
+                    <TextView
+                        android:id="@+id/day0"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Tomorrow"
+                        android:textColor="#000000"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/day0Condition"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Haze"
+                        android:textSize="16sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:background="#ffffff">
+
+
+                    <TextView
+                        android:id="@+id/day0Temp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginRight="20dp"
+                        android:gravity="right|center_vertical"
+                        android:text="22.51c/07.81c"
+                        android:textColor="#000000"
+                        android:textSize="28sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#e0e0e0"
+                android:orientation="horizontal"
+                android:paddingBottom="4dp" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.75"
+                    android:background="#ffffff"
+                    android:orientation="vertical"
+                    android:paddingLeft="20dp">
+
+                    <TextView
+                        android:id="@+id/day1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Tomorrow"
+                        android:textColor="#000000"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/day1Condition"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Haze"
+                        android:textSize="16sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:background="#ffffff">
+
+
+                    <TextView
+                        android:id="@+id/day1Temp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginRight="20dp"
+                        android:gravity="right|center_vertical"
+                        android:text="TextView"
+                        android:textColor="#000000"
+                        android:textSize="28sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#e0e0e0"
+                android:orientation="horizontal"
+                android:paddingBottom="4dp" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.75"
+                    android:background="#ffffff"
+                    android:orientation="vertical"
+                    android:paddingLeft="20dp">
 
                     <TextView
                         android:id="@+id/day2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
-                        android:layout_marginStart="30dp"
-                        android:layout_marginTop="4dp"
-                        android:text="19-01-2018"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Tomorrow"
                         android:textColor="#000000"
-                        android:textSize="24sp" />
+                        android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/day2Condition"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/day2"
-                        android:layout_marginLeft="45dp"
-                        android:layout_marginStart="45dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
                         android:text="Haze"
-                        android:textSize="18sp" />
+                        android:textSize="16sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:background="#ffffff">
+
 
                     <TextView
-                        android:id="@+id/day2MaxTemp"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/day2Temp"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginLeft="43dp"
-                        android:layout_marginTop="4dp"
-                        android:layout_toRightOf="@id/day2"
-                        android:text="00/"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginRight="20dp"
+                        android:gravity="right|center_vertical"
+                        android:text="TextView"
                         android:textColor="#000000"
-                        android:textSize="46sp" />
+                        android:textSize="28sp" />
 
-                    <TextView
-                        android:id="@+id/day2MinTemp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginEnd="5dp"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginTop="4dp"
-                        android:layout_toRightOf="@id/day2MaxTemp"
-                        android:text="00"
-                        android:textColor="#000000"
-                        android:textSize="46sp" />
-
-                </RelativeLayout>
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -381,60 +495,55 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:background="#e0e0e0"
+                android:orientation="horizontal"
                 android:paddingBottom="4dp" >
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginBottom="2dp"
+                    android:layout_weight="0.75"
                     android:background="#ffffff"
-                    android:text="Day3" >
+                    android:orientation="vertical"
+                    android:paddingLeft="20dp">
 
                     <TextView
                         android:id="@+id/day3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
-                        android:layout_marginStart="30dp"
-                        android:layout_marginTop="4dp"
-                        android:text="19-01-2018"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Tomorrow"
                         android:textColor="#000000"
-                        android:textSize="24sp" />
+                        android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/day3Condition"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/day3"
-                        android:layout_marginLeft="45dp"
-                        android:layout_marginStart="45dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
                         android:text="Haze"
-                        android:textSize="18sp" />
+                        android:textSize="16sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:background="#ffffff">
+
 
                     <TextView
-                        android:id="@+id/day3MaxTemp"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/day3Temp"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginLeft="43dp"
-                        android:layout_marginTop="4dp"
-                        android:layout_toRightOf="@id/day3"
-                        android:text="00/"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginRight="20dp"
+                        android:gravity="right|center_vertical"
+                        android:text="TextView"
                         android:textColor="#000000"
-                        android:textSize="46sp" />
+                        android:textSize="28sp" />
 
-                    <TextView
-                        android:id="@+id/day3MinTemp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginEnd="5dp"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginTop="4dp"
-                        android:layout_toRightOf="@id/day3MaxTemp"
-                        android:text="00"
-                        android:textColor="#000000"
-                        android:textSize="46sp" />
-
-                </RelativeLayout>
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -443,122 +552,55 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:background="#e0e0e0"
+                android:orientation="horizontal"
                 android:paddingBottom="4dp" >
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginBottom="2dp"
+                    android:layout_weight="0.75"
                     android:background="#ffffff"
-                    android:text="Day4" >
+                    android:orientation="vertical"
+                    android:paddingLeft="20dp">
 
                     <TextView
                         android:id="@+id/day4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
-                        android:layout_marginStart="30dp"
-                        android:layout_marginTop="4dp"
-                        android:text="19-01-2018"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Tomorrow"
                         android:textColor="#000000"
-                        android:textSize="24sp" />
+                        android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/day4Condition"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/day4"
-                        android:layout_marginLeft="45dp"
-                        android:layout_marginStart="45dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
                         android:text="Haze"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:id="@+id/day4MaxTemp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="43dp"
-                        android:layout_marginTop="4dp"
-                        android:layout_toRightOf="@id/day4"
-                        android:text="00/"
-                        android:textColor="#000000"
-                        android:textSize="46sp" />
-
-                    <TextView
-                        android:id="@+id/day4MinTemp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginEnd="5dp"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginTop="4dp"
-                        android:layout_toRightOf="@id/day4MaxTemp"
-                        android:text="00"
-                        android:textColor="#000000"
-                        android:textSize="46sp" />
-
-                </RelativeLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:background="#e0e0e0"
-                android:paddingBottom="4dp" >
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
+                        android:textSize="16sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="match_parent"
-                    android:layout_marginBottom="2dp"
-                    android:background="#ffffff"
-                    android:text="Day5" >
+                    android:background="#ffffff">
+
 
                     <TextView
-                        android:id="@+id/day5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
-                        android:layout_marginStart="30dp"
-                        android:layout_marginTop="4dp"
-                        android:text="19-01-2018"
-                        android:textColor="#000000"
-                        android:textSize="24sp" />
-
-                    <TextView
-                        android:id="@+id/day5Condition"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/day5"
-                        android:layout_marginLeft="45dp"
-                        android:layout_marginStart="45dp"
-                        android:text="Haze"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:id="@+id/day5MaxTemp"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/day4Temp"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginLeft="43dp"
-                        android:layout_marginTop="4dp"
-                        android:layout_toRightOf="@id/day5"
-                        android:text="00/"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginRight="20dp"
+                        android:gravity="right|center_vertical"
+                        android:text="TextView"
                         android:textColor="#000000"
-                        android:textSize="46sp" />
+                        android:textSize="28sp" />
 
-                    <TextView
-                        android:id="@+id/day5MinTemp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginEnd="5dp"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginTop="4dp"
-                        android:layout_toRightOf="@id/day5MaxTemp"
-                        android:text="00"
-                        android:textColor="#000000"
-                        android:textSize="46sp" />
-
-                </RelativeLayout>
+                </LinearLayout>
 
             </LinearLayout>
 
