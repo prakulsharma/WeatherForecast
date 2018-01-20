@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#e0e0e0"
+    android:orientation="vertical"
     tools:context="com.example.ashu.weatherforecast.MainActivity">
+
+
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e0e0e0">
 
 
     <LinearLayout
@@ -15,64 +23,59 @@
         android:orientation="vertical"
         android:weightSum="8">
 
-       <FrameLayout
-           android:layout_width="match_parent"
-           android:layout_height="250dp"
-           android:layout_marginEnd="6dp"
-           android:layout_marginLeft="6dp"
-           android:layout_marginRight="6dp"
-           android:layout_marginStart="6dp" >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp">
 
 
-           <ImageView
-               android:layout_width="match_parent"
-               android:layout_height="match_parent"
-               android:clickable="true"
-               android:scaleType="centerCrop"
-               android:src="@drawable/weather" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#66D3FA"
+                android:clickable="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/weather" />
 
-           <LinearLayout
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:layout_margin="25dp"
-               android:orientation="vertical"
-               android:paddingBottom="10dp" >
-
-
-               <TextView
-                   android:id="@+id/currentTemp"
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   android:text="2753"
-                   android:textColor="#000000"
-                   android:textSize="48sp" />
-
-               <TextView
-                   android:id="@+id/currentCity"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:text="Greater Noida | Haze"
-                   android:textColor="#000000"
-                   android:textSize="18sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="25dp"
+                android:orientation="vertical"
+                android:paddingBottom="10dp">
 
 
-           </LinearLayout>
+                <TextView
+                    android:id="@+id/currentTemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="48sp" />
 
-           <android.support.design.widget.FloatingActionButton
-               android:id="@+id/floatingActionButton"
-               android:layout_width="80dp"
-               android:layout_height="80dp"
-               android:layout_marginLeft="250dp"
-               android:layout_marginStart="250dp"
-               android:layout_marginTop="160dp"
-               android:clickable="true"
-               app:backgroundTint="?attr/colorPrimary"
-               app:elevation="24dp"
-               app:srcCompat="@android:drawable/ic_input_add" />
+                <TextView
+                    android:id="@+id/currentCity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
 
 
+            </LinearLayout>
 
-       </FrameLayout>
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/floatingActionButton"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="250dp"
+                android:layout_marginStart="250dp"
+                android:layout_marginTop="160dp"
+                android:clickable="true"
+                app:backgroundTint="#1D83F1"
+                app:elevation="24dp"
+                app:srcCompat="@android:drawable/ic_input_add" />
+
+
+        </FrameLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -81,6 +84,7 @@
             android:layout_marginLeft="6dp"
             android:layout_marginRight="6dp"
             android:layout_marginStart="6dp"
+            android:layout_marginTop="6dp"
             android:layout_weight="3"
             android:background="#e0e0e0"
             android:orientation="vertical"
@@ -89,18 +93,30 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_gravity="center_vertical"
                 android:layout_weight="1"
                 android:background="#ffffff"
-                android:paddingBottom="10dp"
+                android:paddingBottom="2.5dp"
                 android:paddingEnd="0dp"
-                android:paddingLeft="50dp"
+                android:paddingLeft="30dp"
                 android:paddingRight="0dp"
-                android:paddingStart="50dp"
-                android:paddingTop="25dp"
-                android:text="Details"
+                android:paddingStart="30dp"
+                android:paddingTop="5dp"
+                android:text="@string/details"
                 android:textColor="#000000"
                 android:textSize="22sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ffffff">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="#000000" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -116,15 +132,15 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:background="#ffffff">
+                    android:background="#ffffff"
+                    android:paddingTop="15dp">
 
                     <TextView
                         android:id="@+id/windHeading"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:paddingLeft="30dp"
-                        android:text="Wind"
+                        android:text="@string/wind"
                         android:textSize="18sp" />
 
                     <TextView
@@ -136,7 +152,6 @@
                         android:layout_marginLeft="22dp"
                         android:layout_marginStart="22dp"
                         android:paddingLeft="5dp"
-                        android:text="12.8 km/hr"
                         android:textColor="#000000"
                         android:textSize="18sp" />
 
@@ -150,7 +165,6 @@
                         android:layout_marginStart="8dp"
                         android:layout_toEndOf="@id/windSpeed"
                         android:layout_toRightOf="@id/windSpeed"
-                        android:text="NW-NW"
                         android:textColor="#000000"
                         android:textSize="18sp" />
 
@@ -160,7 +174,8 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="#ffffff">
+                    android:background="#ffffff"
+                    android:paddingTop="15dp">
 
                     <TextView
                         android:id="@+id/pressureHeading"
@@ -168,7 +183,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:paddingRight="15dp"
-                        android:text="Pressure"
+                        android:text="@string/pressure"
                         android:textSize="18sp" />
 
                     <TextView
@@ -179,7 +194,6 @@
                         android:layout_marginBottom="5dp"
                         android:gravity="center"
                         android:paddingRight="15dp"
-                        android:text="1234 hPa"
                         android:textColor="#000000"
                         android:textSize="18sp" />
 
@@ -223,7 +237,6 @@
                     android:gravity="center_vertical|center"
                     android:paddingBottom="0dp"
                     android:paddingTop="0dp"
-                    android:text="00 km"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -256,7 +269,6 @@
                     android:gravity="center_vertical|center"
                     android:paddingBottom="0dp"
                     android:paddingTop="0dp"
-                    android:text="00"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -296,14 +308,11 @@
                     android:layout_weight="1.2"
                     android:gravity="center_vertical|center"
                     android:paddingRight="30dp"
-                    android:text="100 %"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
 
             </LinearLayout>
-
-
 
 
         </LinearLayout>
@@ -316,16 +325,15 @@
             android:layout_marginRight="6dp"
             android:layout_marginStart="6dp"
             android:layout_weight="5"
-            android:orientation="vertical"
-            android:weightSum="5" >
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_height="100dp"
+                android:layout_marginBottom="4dp"
                 android:background="#e0e0e0"
                 android:orientation="horizontal"
-                android:paddingBottom="4dp" >
+                android:paddingBottom="4dp">
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -338,27 +346,29 @@
                     <TextView
                         android:id="@+id/day0"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="Tomorrow"
+                        android:gravity="bottom|center_horizontal"
+                        android:paddingBottom="1dp"
                         android:textColor="#000000"
                         android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/day0Condition"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="Haze"
+                        android:gravity="top|center_horizontal"
+                        android:paddingTop="1dp"
                         android:textSize="16sp" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="match_parent"
-                    android:background="#ffffff">
+                    android:layout_weight="1"
+                    android:background="#ffffff"
+                    android:paddingTop="4dp">
 
 
                     <TextView
@@ -368,7 +378,6 @@
                         android:layout_marginEnd="20dp"
                         android:layout_marginRight="20dp"
                         android:gravity="right|center_vertical"
-                        android:text="22.51c/07.81c"
                         android:textColor="#000000"
                         android:textSize="28sp" />
 
@@ -378,11 +387,12 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="100dp"
+                android:layout_marginBottom="4dp"
                 android:layout_weight="1"
                 android:background="#e0e0e0"
                 android:orientation="horizontal"
-                android:paddingBottom="4dp" >
+                android:paddingBottom="4dp">
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -395,26 +405,27 @@
                     <TextView
                         android:id="@+id/day1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="Tomorrow"
+                        android:gravity="bottom|center_horizontal"
+                        android:paddingBottom="1dp"
                         android:textColor="#000000"
                         android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/day1Condition"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="Haze"
+                        android:gravity="top|center_horizontal"
+                        android:paddingTop="1dp"
                         android:textSize="16sp" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="match_parent"
+                    android:layout_weight="1"
                     android:background="#ffffff">
 
 
@@ -425,7 +436,6 @@
                         android:layout_marginEnd="20dp"
                         android:layout_marginRight="20dp"
                         android:gravity="right|center_vertical"
-                        android:text="TextView"
                         android:textColor="#000000"
                         android:textSize="28sp" />
 
@@ -435,11 +445,12 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="100dp"
+                android:layout_marginBottom="4dp"
                 android:layout_weight="1"
                 android:background="#e0e0e0"
                 android:orientation="horizontal"
-                android:paddingBottom="4dp" >
+                android:paddingBottom="4dp">
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -452,26 +463,27 @@
                     <TextView
                         android:id="@+id/day2"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="Tomorrow"
+                        android:gravity="bottom|center_horizontal"
+                        android:paddingBottom="1dp"
                         android:textColor="#000000"
                         android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/day2Condition"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="Haze"
+                        android:gravity="top|center_horizontal"
+                        android:paddingTop="1dp"
                         android:textSize="16sp" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="match_parent"
+                    android:layout_weight="1"
                     android:background="#ffffff">
 
 
@@ -482,7 +494,6 @@
                         android:layout_marginEnd="20dp"
                         android:layout_marginRight="20dp"
                         android:gravity="right|center_vertical"
-                        android:text="TextView"
                         android:textColor="#000000"
                         android:textSize="28sp" />
 
@@ -492,11 +503,12 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="100dp"
+                android:layout_marginBottom="4dp"
                 android:layout_weight="1"
                 android:background="#e0e0e0"
                 android:orientation="horizontal"
-                android:paddingBottom="4dp" >
+                android:paddingBottom="4dp">
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -509,26 +521,27 @@
                     <TextView
                         android:id="@+id/day3"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="Tomorrow"
+                        android:gravity="bottom|center_horizontal"
+                        android:paddingBottom="1dp"
                         android:textColor="#000000"
                         android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/day3Condition"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="Haze"
+                        android:gravity="top|center_horizontal"
+                        android:paddingTop="1dp"
                         android:textSize="16sp" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="match_parent"
+                    android:layout_weight="1"
                     android:background="#ffffff">
 
 
@@ -539,7 +552,6 @@
                         android:layout_marginEnd="20dp"
                         android:layout_marginRight="20dp"
                         android:gravity="right|center_vertical"
-                        android:text="TextView"
                         android:textColor="#000000"
                         android:textSize="28sp" />
 
@@ -549,11 +561,12 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="100dp"
+                android:layout_marginBottom="4dp"
                 android:layout_weight="1"
                 android:background="#e0e0e0"
                 android:orientation="horizontal"
-                android:paddingBottom="4dp" >
+                android:paddingBottom="4dp">
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -566,26 +579,27 @@
                     <TextView
                         android:id="@+id/day4"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="Tomorrow"
+                        android:gravity="bottom|center_horizontal"
+                        android:paddingBottom="1dp"
                         android:textColor="#000000"
                         android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/day4Condition"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="Haze"
+                        android:gravity="top|center_horizontal"
+                        android:paddingTop="1dp"
                         android:textSize="16sp" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="match_parent"
+                    android:layout_weight="1"
                     android:background="#ffffff">
 
 
@@ -596,7 +610,6 @@
                         android:layout_marginEnd="20dp"
                         android:layout_marginRight="20dp"
                         android:gravity="right|center_vertical"
-                        android:text="TextView"
                         android:textColor="#000000"
                         android:textSize="28sp" />
 
@@ -605,12 +618,11 @@
             </LinearLayout>
 
 
-
-
-
         </LinearLayout>
 
 
     </LinearLayout>
 
 </ScrollView>
+
+</LinearLayout>

@@ -15,7 +15,7 @@ import java.util.Scanner;
  */
 
 public class NetworkUtility {
-    final static String BASE_URL ="http://dataservice.accuweather.com?apikey=1av2s8PN1C7b8SGs6mYrmorKMMWAq7Yf" ;
+    final static String BASE_URL ="http://dataservice.accuweather.com?apikey=wORLZm30gqJCslui3dbY3JLO74IMt2hw" ;
     public static String abc="";
     static String logNetworkUtility="WeatherForecast";
 
@@ -59,7 +59,6 @@ public class NetworkUtility {
 
     public static String getResponseFromHttpUrl(URL url) throws Exception {
         HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-        Log.i(logNetworkUtility,"Network "+url);
         String JSONFILE = null;
         try {
 

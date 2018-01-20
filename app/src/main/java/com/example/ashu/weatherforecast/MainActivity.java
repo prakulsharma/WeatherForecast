@@ -1,5 +1,6 @@
 package com.example.ashu.weatherforecast;
 
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.net.ConnectivityManager;
@@ -11,10 +12,12 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
@@ -31,6 +34,7 @@ import java.util.HashMap;
 public class MainActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener {
 
      TextView currentCity,currentTemp, visibility, uvIndex,humidity,windSpeed,windDirection,pressure;
+     TextView windHeading,pressureHeading,uvHeading,visibilityHeading,humidityHeading;
      TextView day0Condition,day1Condition,day3Condition,day2Condition,day4Condition;
      TextView day0Temp,day1Temp,day2Temp,day3Temp,day4Temp;
      TextView day0,day1,day2,day3,day4;
@@ -45,9 +49,28 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
 
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.id.action_settings:
+                startActivity(new Intent(this,SettingsActivity.class));
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main,menu);
+        return true;
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
 
         currentCity = findViewById(R.id.currentCity);
         currentTemp = findViewById(R.id.currentTemp);
@@ -57,6 +80,12 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         windSpeed = findViewById(R.id.windSpeed);
         windDirection = findViewById(R.id.windDirection);
         pressure = findViewById(R.id.pressureValue);
+
+        pressureHeading = findViewById(R.id.pressureHeading);
+        windHeading = findViewById(R.id.windHeading);
+        visibilityHeading = findViewById(R.id.visibilityHeading);
+        humidityHeading = findViewById(R.id.humidityHeading);
+        uvHeading = findViewById(R.id.uvIndexHeading);
 
         day0=(TextView)findViewById(R.id.day0);
         day0Condition=(TextView)findViewById(R.id.day0Condition);
@@ -125,7 +154,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
 
         currentLat=""+location.getLatitude();
         currentLon=""+location.getLongitude();
-
         url=NetworkUtility.buildUrl("locationKey");
         new QueryTask().execute(url);
     }
@@ -195,13 +223,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
                 if(internetStatus==true)
                     SearchResults = NetworkUtility.getResponseFromHttpUrl(searchUrl);
                 else {
-                    Log.i(logTag,"else called");
                     SearchResults=null;
                 }
             } catch (Exception e) {
                 e.printStackTrace();
-
-                Log.i(logTag,"exc called");
                 SearchResults=null;
             }
 
@@ -216,7 +241,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
                 WeatherJSON.getLocationKey(weatherSearchResult);
                 URL currentCondn=NetworkUtility.buildUrl("currentCondition");
                 new QueryTask().execute(NetworkUtility.buildUrl("currentCondition"));
-                Log.i(logTag," current Condition URL"+currentCondn);
             }
             else if(weatherSearchResult != null && !weatherSearchResult.equals("")&&NetworkUtility.abc=="currentCondition"){
 
@@ -224,11 +248,16 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
 
                 currentTemp.setText(WeatherJSON.currentTemp+"°C");
                 currentCity.setText(WeatherJSON.localizedName+" | "+WeatherJSON.weatherText);
+                windHeading.setText(R.string.wind);
                 windSpeed.setText(WeatherJSON.windSpeed);
                 windDirection.setText(WeatherJSON.windDirection);
+                pressureHeading.setText(R.string.pressure);
                 pressure.setText(WeatherJSON.pressureValue);
+                visibilityHeading.setText(R.string.visibilty);
                 visibility.setText(WeatherJSON.visibilityValue);
+                uvHeading.setText(R.string.uvIndex);
                 uvIndex.setText(WeatherJSON.uvIndex);
+                humidityHeading.setText(R.string.humidity);
                 humidity.setText(WeatherJSON.relativeHumidity);
 
                 new QueryTask().execute(NetworkUtility.buildUrl("forecast"));
@@ -242,13 +271,11 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
 
                 Date date = new Date();
                 date.setHours(date.getHours() + 24);
-                System.out.println(date);
                 SimpleDateFormat simpDate;
                 simpDate = new SimpleDateFormat("kk:mm:ss");
                 String time=simpDate.format(date);
                 int hh=Integer.parseInt(time.substring(0,2));
 
-                d.get("day1MinTemp");
                 if(hh>=6&&hh<18){
                     //DayCondition
                     day1Condition.setText(d.get("day1Condition"));
@@ -263,11 +290,11 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
                     day3Condition.setText(d.get("day3NightCondition"));
                     day4Condition.setText(d.get("day4NightCondition"));
                 }
-                day0Temp.setText(d.get("day0MaxTemp")+"°C"+" / "+d.get("day0MinTemp")+"°C");
-                day1Temp.setText(d.get("day1MaxTemp")+"°C"+" / "+d.get("day1MinTemp")+"°C");
-                day2Temp.setText(d.get("day2MaxTemp")+"°C"+" / "+d.get("day2MinTemp")+"°C");
-                day3Temp.setText(d.get("day3MaxTemp")+"°C"+" / "+d.get("day3MinTemp")+"°C");
-                day4Temp.setText(d.get("day4MaxTemp")+"°C"+" / "+d.get("day4MinTemp")+"°C");
+                day0Temp.setText(d.get("day0MaxTemp")+"/"+d.get("day0MinTemp")+" °C");
+                day1Temp.setText(d.get("day1MaxTemp")+"/"+d.get("day1MinTemp")+" °C");
+                day2Temp.setText(d.get("day2MaxTemp")+"/"+d.get("day2MinTemp")+" °C");
+                day3Temp.setText(d.get("day3MaxTemp")+"/"+d.get("day3MinTemp")+" °C");
+                day4Temp.setText(d.get("day4MaxTemp")+"/"+d.get("day4MinTemp")+" °C");
 
                 day0.setText("Today");day1.setText("Tommorow");
 
@@ -277,25 +304,25 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
                 switch (day){
 
                     case Calendar.MONDAY:
-                        day2.setText("Wed");day3.setText("Thu");day4.setText("Fri");
+                        day2.setText("Wednesday");day3.setText("Thursday");day4.setText("Friday");
                         break;
                     case Calendar.TUESDAY:
-                        day2.setText("Thu");day3.setText("Fri");day4.setText("Sat");
+                        day2.setText("Thursday");day3.setText("Friday");day4.setText("Saturday");
                         break;
                     case Calendar.WEDNESDAY:
-                        day2.setText("Fri");day3.setText("Sat");day4.setText("Sun");
+                        day2.setText("Friday");day3.setText("Saturday");day4.setText("Sunday");
                         break;
                     case Calendar.THURSDAY:
-                        day2.setText("Sat");day3.setText("Sun");day4.setText("Mon");
+                        day2.setText("Saturday");day3.setText("Sunday");day4.setText("Monday");
                         break;
                     case Calendar.FRIDAY:
-                        day2.setText("Sun");day3.setText("Mon");day4.setText("Tue");
+                        day2.setText("Sunday");day3.setText("Monday");day4.setText("Tuesday");
                         break;
                     case Calendar.SATURDAY:
-                        day2.setText("Mon");day3.setText("Tue");day4.setText("Wed");
+                        day2.setText("Mon");day3.setText("Tuesday");day4.setText("Wednesday");
                         break;
                     case Calendar.SUNDAY:
-                        day2.setText("Tue");day3.setText("Wed");day4.setText("Thu");
+                        day2.setText("Tuesday");day3.setText("Wednesday");day4.setText("Thursday");
                         break;
                 }
 

@@ -18,16 +18,12 @@ public class WeatherJSON {
 
     public  static HashMap<String,String> data=new HashMap<>();
 
-    static String logTag="WeatherJSON";
     public static String locationKey,localizedName,weatherText,currentTemp,relativeHumidity,uvIndex;
     public static String windDirection,windSpeed,visibilityValue,pressureValue;
 
     public static void getCurrentCondition(String JSONFile){
         try {
             if(JSONFile!=null) {
-
-                Log.i(logTag,"CurrentCOnditionJson  "+JSONFile);
-
 
                 JSONArray root = new JSONArray(JSONFile);
                 JSONObject zero=root.getJSONObject(0);
