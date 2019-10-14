@@ -87,25 +87,25 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         humidityHeading = findViewById(R.id.humidityHeading);
         uvHeading = findViewById(R.id.uvIndexHeading);
 
-        day0=(TextView)findViewById(R.id.day0);
-        day0Condition=(TextView)findViewById(R.id.day0Condition);
-        day0Temp=(TextView)findViewById(R.id.day0Temp);
+        day0= findViewById(R.id.day0);
+        day0Condition=findViewById(R.id.day0Condition);
+        day0Temp=findViewById(R.id.day0Temp);
 
-        day1=(TextView)findViewById(R.id.day1);
-        day1Condition=(TextView)findViewById(R.id.day1Condition);
-        day1Temp=(TextView)findViewById(R.id.day1Temp);
+        day1=findViewById(R.id.day1);
+        day1Condition=findViewById(R.id.day1Condition);
+        day1Temp=findViewById(R.id.day1Temp);
 
-        day2=(TextView)findViewById(R.id.day2);
-        day2Condition=(TextView)findViewById(R.id.day2Condition);
-        day2Temp=(TextView)findViewById(R.id.day2Temp);
+        day2=findViewById(R.id.day2);
+        day2Condition=findViewById(R.id.day2Condition);
+        day2Temp=findViewById(R.id.day2Temp);
 
-        day3=(TextView)findViewById(R.id.day3);
-        day3Condition=(TextView)findViewById(R.id.day3Condition);
-        day3Temp=(TextView)findViewById(R.id.day3Temp);
+        day3=findViewById(R.id.day3);
+        day3Condition=findViewById(R.id.day3Condition);
+        day3Temp=findViewById(R.id.day3Temp);
 
-        day4=(TextView)findViewById(R.id.day4);
-        day4Condition=(TextView)findViewById(R.id.day4Condition);
-        day4Temp=(TextView)findViewById(R.id.day4Temp);
+        day4=findViewById(R.id.day4);
+        day4Condition=findViewById(R.id.day4Condition);
+        day4Temp=findViewById(R.id.day4Temp);
 
 
         mGoogleApiClient = new GoogleApiClient.Builder(this)
@@ -129,7 +129,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     public void onConnected(@Nullable Bundle bundle) {
 
         mLocationRequest = LocationRequest.create();
-
         mLocationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
         mLocationRequest.setInterval(6000000);
         getLocation();
@@ -139,13 +138,13 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
 
     @Override
     public void onConnectionSuspended(int i) {
-        Log.i(logTag,"Connction Suspended");
+        Log.i(logTag,"Connection Suspended");
 
     }
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-        Log.i(logTag,"Connction Failed");
+        Log.i(logTag,"Connection Failed");
 
     }
 
@@ -277,13 +276,13 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
                 int hh=Integer.parseInt(time.substring(0,2));
 
                 if(hh>=6&&hh<18){
-                    //DayCondition
+                    //set texts for DayCondition
                     day1Condition.setText(d.get("day1Condition"));
                     day2Condition.setText(d.get("day2Condition"));
                     day3Condition.setText(d.get("day3Condition"));
                     day4Condition.setText(d.get("day4Condition"));
                 }else{
-                    //NightCondition
+                    //set texts for NightCondition
 
                     day1Condition.setText(d.get("day1NightCondition"));
                     day2Condition.setText(d.get("day2NightCondition"));
@@ -296,7 +295,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
                 day3Temp.setText(d.get("day3MaxTemp")+"/"+d.get("day3MinTemp")+" °C");
                 day4Temp.setText(d.get("day4MaxTemp")+"/"+d.get("day4MinTemp")+" °C");
 
-                day0.setText("Today");day1.setText("Tommorow");
+                day0.setText("Today");
+                day1.setText("Tommorow");
 
                 Calendar calendar = Calendar.getInstance();
                 int day = calendar.get(Calendar.DAY_OF_WEEK);
